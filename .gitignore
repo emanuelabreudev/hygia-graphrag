@@ -1,0 +1,21 @@
+# Ambiente
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Artefatos regeneráveis (o pipeline os reconstrói de forma determinística)
+data/corpus/chunks.json
+data/processed/
+data/gold/perguntas.json
+
+# Segredos
+.env
+*.key
+
+# SO / editor
+.DS_Store
+.vscode/
+.idea/

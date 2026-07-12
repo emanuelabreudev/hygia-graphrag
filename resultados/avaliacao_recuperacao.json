@@ -1,0 +1,1693 @@
+{
+  "config": {
+    "top_k": 8,
+    "n_componentes": 128,
+    "max_hops": 3,
+    "rrf_k": 60
+  },
+  "n_perguntas": 35,
+  "resultados": {
+    "por_recuperador": {
+      "vetorial": {
+        "geral": {
+          "recall": {
+            "media": 0.3143,
+            "ic95": [
+              0.1857,
+              0.4429
+            ]
+          },
+          "precision": {
+            "media": 0.0571,
+            "ic95": [
+              0.0357,
+              0.0786
+            ]
+          },
+          "mrr": {
+            "media": 0.1543,
+            "ic95": [
+              0.0809,
+              0.2429
+            ]
+          },
+          "hit": {
+            "media": 0.1714,
+            "ic95": [
+              0.0571,
+              0.2857
+            ]
+          },
+          "cobertura": {
+            "media": 0.1714,
+            "ic95": [
+              0.0571,
+              0.2857
+            ]
+          }
+        },
+        "por_tipo": {
+          "fato_direto": {
+            "n": 6,
+            "cobertura": 1.0,
+            "hit": 1.0,
+            "recall": 1.0
+          },
+          "mecanismo": {
+            "n": 8,
+            "cobertura": 0.0,
+            "hit": 0.0,
+            "recall": 0.0
+          },
+          "ponte_classe": {
+            "n": 13,
+            "cobertura": 0.0,
+            "hit": 0.0,
+            "recall": 0.3846
+          },
+          "ponte_classe2": {
+            "n": 8,
+            "cobertura": 0.0,
+            "hit": 0.0,
+            "recall": 0.0
+          }
+        }
+      },
+      "bm25": {
+        "geral": {
+          "recall": {
+            "media": 0.3857,
+            "ic95": [
+              0.2714,
+              0.5143
+            ]
+          },
+          "precision": {
+            "media": 0.075,
+            "ic95": [
+              0.0536,
+              0.0964
+            ]
+          },
+          "mrr": {
+            "media": 0.3339,
+            "ic95": [
+              0.2045,
+              0.4627
+            ]
+          },
+          "hit": {
+            "media": 0.2,
+            "ic95": [
+              0.0857,
+              0.3429
+            ]
+          },
+          "cobertura": {
+            "media": 0.2,
+            "ic95": [
+              0.0857,
+              0.3429
+            ]
+          }
+        },
+        "por_tipo": {
+          "fato_direto": {
+            "n": 6,
+            "cobertura": 1.0,
+            "hit": 1.0,
+            "recall": 1.0
+          },
+          "mecanismo": {
+            "n": 8,
+            "cobertura": 0.0,
+            "hit": 0.0,
+            "recall": 0.0625
+          },
+          "ponte_classe": {
+            "n": 13,
+            "cobertura": 0.0769,
+            "hit": 0.0769,
+            "recall": 0.5385
+          },
+          "ponte_classe2": {
+            "n": 8,
+            "cobertura": 0.0,
+            "hit": 0.0,
+            "recall": 0.0
+          }
+        }
+      },
+      "hibrido": {
+        "geral": {
+          "recall": {
+            "media": 0.3857,
+            "ic95": [
+              0.2714,
+              0.5143
+            ]
+          },
+          "precision": {
+            "media": 0.075,
+            "ic95": [
+              0.0536,
+              0.0964
+            ]
+          },
+          "mrr": {
+            "media": 0.2331,
+            "ic95": [
+              0.1386,
+              0.3362
+            ]
+          },
+          "hit": {
+            "media": 0.2,
+            "ic95": [
+              0.0857,
+              0.3429
+            ]
+          },
+          "cobertura": {
+            "media": 0.2,
+            "ic95": [
+              0.0857,
+              0.3429
+            ]
+          }
+        },
+        "por_tipo": {
+          "fato_direto": {
+            "n": 6,
+            "cobertura": 1.0,
+            "hit": 1.0,
+            "recall": 1.0
+          },
+          "mecanismo": {
+            "n": 8,
+            "cobertura": 0.0,
+            "hit": 0.0,
+            "recall": 0.0625
+          },
+          "ponte_classe": {
+            "n": 13,
+            "cobertura": 0.0769,
+            "hit": 0.0769,
+            "recall": 0.5385
+          },
+          "ponte_classe2": {
+            "n": 8,
+            "cobertura": 0.0,
+            "hit": 0.0,
+            "recall": 0.0
+          }
+        }
+      },
+      "graphrag": {
+        "geral": {
+          "recall": {
+            "media": 0.6048,
+            "ic95": [
+              0.481,
+              0.7238
+            ]
+          },
+          "precision": {
+            "media": 0.1429,
+            "ic95": [
+              0.1143,
+              0.1714
+            ]
+          },
+          "mrr": {
+            "media": 0.571,
+            "ic95": [
+              0.4409,
+              0.7028
+            ]
+          },
+          "hit": {
+            "media": 0.4,
+            "ic95": [
+              0.2286,
+              0.5714
+            ]
+          },
+          "cobertura": {
+            "media": 1.0,
+            "ic95": [
+              1.0,
+              1.0
+            ]
+          }
+        },
+        "por_tipo": {
+          "fato_direto": {
+            "n": 6,
+            "cobertura": 1.0,
+            "hit": 1.0,
+            "recall": 1.0
+          },
+          "mecanismo": {
+            "n": 8,
+            "cobertura": 1.0,
+            "hit": 0.0,
+            "recall": 0.125
+          },
+          "ponte_classe": {
+            "n": 13,
+            "cobertura": 1.0,
+            "hit": 0.6154,
+            "recall": 0.8077
+          },
+          "ponte_classe2": {
+            "n": 8,
+            "cobertura": 1.0,
+            "hit": 0.0,
+            "recall": 0.4583
+          }
+        }
+      }
+    },
+    "significancia": {
+      "cobertura": {
+        "graphrag": 1.0,
+        "melhor_baseline": "bm25",
+        "baseline_media": 0.2,
+        "delta": 0.8,
+        "p_valor": 0.0002,
+        "significativo_5pct": true
+      },
+      "hit": {
+        "graphrag": 0.4,
+        "melhor_baseline": "bm25",
+        "baseline_media": 0.2,
+        "delta": 0.2,
+        "p_valor": 0.0054,
+        "significativo_5pct": true
+      }
+    }
+  },
+  "linhas": [
+    {
+      "pergunta": "q001",
+      "tipo": "fato_direto",
+      "recuperador": "vetorial",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.5,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q001",
+      "tipo": "fato_direto",
+      "recuperador": "bm25",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.5,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q001",
+      "tipo": "fato_direto",
+      "recuperador": "hibrido",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.5,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q001",
+      "tipo": "fato_direto",
+      "recuperador": "graphrag",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.25,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q002",
+      "tipo": "fato_direto",
+      "recuperador": "vetorial",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q002",
+      "tipo": "fato_direto",
+      "recuperador": "bm25",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q002",
+      "tipo": "fato_direto",
+      "recuperador": "hibrido",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q002",
+      "tipo": "fato_direto",
+      "recuperador": "graphrag",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q003",
+      "tipo": "fato_direto",
+      "recuperador": "vetorial",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q003",
+      "tipo": "fato_direto",
+      "recuperador": "bm25",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q003",
+      "tipo": "fato_direto",
+      "recuperador": "hibrido",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q003",
+      "tipo": "fato_direto",
+      "recuperador": "graphrag",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.5,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q004",
+      "tipo": "fato_direto",
+      "recuperador": "vetorial",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.25,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q004",
+      "tipo": "fato_direto",
+      "recuperador": "bm25",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.3333333333333333,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q004",
+      "tipo": "fato_direto",
+      "recuperador": "hibrido",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.3333333333333333,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q004",
+      "tipo": "fato_direto",
+      "recuperador": "graphrag",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.25,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q005",
+      "tipo": "fato_direto",
+      "recuperador": "vetorial",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.5,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q005",
+      "tipo": "fato_direto",
+      "recuperador": "bm25",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q005",
+      "tipo": "fato_direto",
+      "recuperador": "hibrido",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.5,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q005",
+      "tipo": "fato_direto",
+      "recuperador": "graphrag",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.3333333333333333,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q006",
+      "tipo": "fato_direto",
+      "recuperador": "vetorial",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.2,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q006",
+      "tipo": "fato_direto",
+      "recuperador": "bm25",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.2,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q006",
+      "tipo": "fato_direto",
+      "recuperador": "hibrido",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.2,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q006",
+      "tipo": "fato_direto",
+      "recuperador": "graphrag",
+      "recall": 1.0,
+      "precision": 0.125,
+      "mrr": 0.125,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q007",
+      "tipo": "mecanismo",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q007",
+      "tipo": "mecanismo",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q007",
+      "tipo": "mecanismo",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q007",
+      "tipo": "mecanismo",
+      "recuperador": "graphrag",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.1111111111111111,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q008",
+      "tipo": "mecanismo",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q008",
+      "tipo": "mecanismo",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q008",
+      "tipo": "mecanismo",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q008",
+      "tipo": "mecanismo",
+      "recuperador": "graphrag",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.1111111111111111,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q009",
+      "tipo": "mecanismo",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q009",
+      "tipo": "mecanismo",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q009",
+      "tipo": "mecanismo",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q009",
+      "tipo": "mecanismo",
+      "recuperador": "graphrag",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.1111111111111111,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q010",
+      "tipo": "mecanismo",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q010",
+      "tipo": "mecanismo",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q010",
+      "tipo": "mecanismo",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q010",
+      "tipo": "mecanismo",
+      "recuperador": "graphrag",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q011",
+      "tipo": "mecanismo",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q011",
+      "tipo": "mecanismo",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q011",
+      "tipo": "mecanismo",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q011",
+      "tipo": "mecanismo",
+      "recuperador": "graphrag",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.1111111111111111,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q012",
+      "tipo": "mecanismo",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q012",
+      "tipo": "mecanismo",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q012",
+      "tipo": "mecanismo",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q012",
+      "tipo": "mecanismo",
+      "recuperador": "graphrag",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.1111111111111111,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q013",
+      "tipo": "mecanismo",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q013",
+      "tipo": "mecanismo",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q013",
+      "tipo": "mecanismo",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q013",
+      "tipo": "mecanismo",
+      "recuperador": "graphrag",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.3333333333333333,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q014",
+      "tipo": "mecanismo",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q014",
+      "tipo": "mecanismo",
+      "recuperador": "bm25",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.14285714285714285,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q014",
+      "tipo": "mecanismo",
+      "recuperador": "hibrido",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.14285714285714285,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q014",
+      "tipo": "mecanismo",
+      "recuperador": "graphrag",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.1111111111111111,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q015",
+      "tipo": "ponte_classe",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q015",
+      "tipo": "ponte_classe",
+      "recuperador": "bm25",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.2,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q015",
+      "tipo": "ponte_classe",
+      "recuperador": "hibrido",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.125,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q015",
+      "tipo": "ponte_classe",
+      "recuperador": "graphrag",
+      "recall": 1.0,
+      "precision": 0.25,
+      "mrr": 1.0,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q016",
+      "tipo": "ponte_classe",
+      "recuperador": "vetorial",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.125,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q016",
+      "tipo": "ponte_classe",
+      "recuperador": "bm25",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.14285714285714285,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q016",
+      "tipo": "ponte_classe",
+      "recuperador": "hibrido",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.125,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q016",
+      "tipo": "ponte_classe",
+      "recuperador": "graphrag",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.5,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q017",
+      "tipo": "ponte_classe",
+      "recuperador": "vetorial",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.16666666666666666,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q017",
+      "tipo": "ponte_classe",
+      "recuperador": "bm25",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.25,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q017",
+      "tipo": "ponte_classe",
+      "recuperador": "hibrido",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.16666666666666666,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q017",
+      "tipo": "ponte_classe",
+      "recuperador": "graphrag",
+      "recall": 1.0,
+      "precision": 0.25,
+      "mrr": 0.5,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q018",
+      "tipo": "ponte_classe",
+      "recuperador": "vetorial",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.16666666666666666,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q018",
+      "tipo": "ponte_classe",
+      "recuperador": "bm25",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q018",
+      "tipo": "ponte_classe",
+      "recuperador": "hibrido",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.5,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q018",
+      "tipo": "ponte_classe",
+      "recuperador": "graphrag",
+      "recall": 1.0,
+      "precision": 0.25,
+      "mrr": 1.0,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q019",
+      "tipo": "ponte_classe",
+      "recuperador": "vetorial",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.16666666666666666,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q019",
+      "tipo": "ponte_classe",
+      "recuperador": "bm25",
+      "recall": 1.0,
+      "precision": 0.25,
+      "mrr": 0.16666666666666666,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q019",
+      "tipo": "ponte_classe",
+      "recuperador": "hibrido",
+      "recall": 1.0,
+      "precision": 0.25,
+      "mrr": 0.16666666666666666,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q019",
+      "tipo": "ponte_classe",
+      "recuperador": "graphrag",
+      "recall": 1.0,
+      "precision": 0.25,
+      "mrr": 1.0,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q020",
+      "tipo": "ponte_classe",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q020",
+      "tipo": "ponte_classe",
+      "recuperador": "bm25",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.5,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q020",
+      "tipo": "ponte_classe",
+      "recuperador": "hibrido",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.2,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q020",
+      "tipo": "ponte_classe",
+      "recuperador": "graphrag",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.16666666666666666,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q021",
+      "tipo": "ponte_classe",
+      "recuperador": "vetorial",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.25,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q021",
+      "tipo": "ponte_classe",
+      "recuperador": "bm25",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q021",
+      "tipo": "ponte_classe",
+      "recuperador": "hibrido",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q021",
+      "tipo": "ponte_classe",
+      "recuperador": "graphrag",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.3333333333333333,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q022",
+      "tipo": "ponte_classe",
+      "recuperador": "vetorial",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.25,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q022",
+      "tipo": "ponte_classe",
+      "recuperador": "bm25",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q022",
+      "tipo": "ponte_classe",
+      "recuperador": "hibrido",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.5,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q022",
+      "tipo": "ponte_classe",
+      "recuperador": "graphrag",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.25,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q023",
+      "tipo": "ponte_classe",
+      "recuperador": "vetorial",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.125,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q023",
+      "tipo": "ponte_classe",
+      "recuperador": "bm25",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.25,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q023",
+      "tipo": "ponte_classe",
+      "recuperador": "hibrido",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.2,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q023",
+      "tipo": "ponte_classe",
+      "recuperador": "graphrag",
+      "recall": 1.0,
+      "precision": 0.25,
+      "mrr": 1.0,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q024",
+      "tipo": "ponte_classe",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q024",
+      "tipo": "ponte_classe",
+      "recuperador": "bm25",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q024",
+      "tipo": "ponte_classe",
+      "recuperador": "hibrido",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.3333333333333333,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q024",
+      "tipo": "ponte_classe",
+      "recuperador": "graphrag",
+      "recall": 1.0,
+      "precision": 0.25,
+      "mrr": 1.0,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q025",
+      "tipo": "ponte_classe",
+      "recuperador": "vetorial",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.25,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q025",
+      "tipo": "ponte_classe",
+      "recuperador": "bm25",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q025",
+      "tipo": "ponte_classe",
+      "recuperador": "hibrido",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.5,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q025",
+      "tipo": "ponte_classe",
+      "recuperador": "graphrag",
+      "recall": 1.0,
+      "precision": 0.25,
+      "mrr": 0.3333333333333333,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q026",
+      "tipo": "ponte_classe",
+      "recuperador": "vetorial",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.25,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q026",
+      "tipo": "ponte_classe",
+      "recuperador": "bm25",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.5,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q026",
+      "tipo": "ponte_classe",
+      "recuperador": "hibrido",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.3333333333333333,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q026",
+      "tipo": "ponte_classe",
+      "recuperador": "graphrag",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.3333333333333333,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q027",
+      "tipo": "ponte_classe",
+      "recuperador": "vetorial",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.2,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q027",
+      "tipo": "ponte_classe",
+      "recuperador": "bm25",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.5,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q027",
+      "tipo": "ponte_classe",
+      "recuperador": "hibrido",
+      "recall": 0.5,
+      "precision": 0.125,
+      "mrr": 0.3333333333333333,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q027",
+      "tipo": "ponte_classe",
+      "recuperador": "graphrag",
+      "recall": 1.0,
+      "precision": 0.25,
+      "mrr": 1.0,
+      "hit": 1.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q028",
+      "tipo": "ponte_classe2",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q028",
+      "tipo": "ponte_classe2",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q028",
+      "tipo": "ponte_classe2",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q028",
+      "tipo": "ponte_classe2",
+      "recuperador": "graphrag",
+      "recall": 0.3333333333333333,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q029",
+      "tipo": "ponte_classe2",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q029",
+      "tipo": "ponte_classe2",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q029",
+      "tipo": "ponte_classe2",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q029",
+      "tipo": "ponte_classe2",
+      "recuperador": "graphrag",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.1111111111111111,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q030",
+      "tipo": "ponte_classe2",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q030",
+      "tipo": "ponte_classe2",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q030",
+      "tipo": "ponte_classe2",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q030",
+      "tipo": "ponte_classe2",
+      "recuperador": "graphrag",
+      "recall": 0.6666666666666666,
+      "precision": 0.25,
+      "mrr": 1.0,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q031",
+      "tipo": "ponte_classe2",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q031",
+      "tipo": "ponte_classe2",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q031",
+      "tipo": "ponte_classe2",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q031",
+      "tipo": "ponte_classe2",
+      "recuperador": "graphrag",
+      "recall": 0.6666666666666666,
+      "precision": 0.25,
+      "mrr": 1.0,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q032",
+      "tipo": "ponte_classe2",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q032",
+      "tipo": "ponte_classe2",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q032",
+      "tipo": "ponte_classe2",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q032",
+      "tipo": "ponte_classe2",
+      "recuperador": "graphrag",
+      "recall": 0.6666666666666666,
+      "precision": 0.25,
+      "mrr": 1.0,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q033",
+      "tipo": "ponte_classe2",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q033",
+      "tipo": "ponte_classe2",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q033",
+      "tipo": "ponte_classe2",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q033",
+      "tipo": "ponte_classe2",
+      "recuperador": "graphrag",
+      "recall": 0.3333333333333333,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q034",
+      "tipo": "ponte_classe2",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q034",
+      "tipo": "ponte_classe2",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q034",
+      "tipo": "ponte_classe2",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q034",
+      "tipo": "ponte_classe2",
+      "recuperador": "graphrag",
+      "recall": 0.3333333333333333,
+      "precision": 0.125,
+      "mrr": 1.0,
+      "hit": 0.0,
+      "cobertura": 1.0
+    },
+    {
+      "pergunta": "q035",
+      "tipo": "ponte_classe2",
+      "recuperador": "vetorial",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q035",
+      "tipo": "ponte_classe2",
+      "recuperador": "bm25",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q035",
+      "tipo": "ponte_classe2",
+      "recuperador": "hibrido",
+      "recall": 0.0,
+      "precision": 0.0,
+      "mrr": 0.0,
+      "hit": 0.0,
+      "cobertura": 0.0
+    },
+    {
+      "pergunta": "q035",
+      "tipo": "ponte_classe2",
+      "recuperador": "graphrag",
+      "recall": 0.6666666666666666,
+      "precision": 0.25,
+      "mrr": 1.0,
+      "hit": 0.0,
+      "cobertura": 1.0
+    }
+  ]
+}

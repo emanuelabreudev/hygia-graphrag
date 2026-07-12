@@ -1,0 +1,38 @@
+[project]
+name = "hygia-graphrag"
+version = "1.0.0"
+description = "Graph RAG para segurança medicamentosa: raciocínio multi-hop auditável sobre interações entre medicamentos."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Emanuel Abreu" }]
+keywords = ["graph-rag", "knowledge-graph", "rag", "farmacologia", "interacoes-medicamentosas", "nlp"]
+
+dependencies = [
+    "numpy==2.5.1",
+    "pandas==3.0.3",
+    "scikit-learn==1.9.0",
+    "networkx==3.6.1",
+    "scipy==1.18.0",
+    "matplotlib==3.11.0",
+    "streamlit==1.59.1",
+    "pyvis==0.3.2",
+    "anthropic==0.116.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+
+[project.urls]
+Repository = "https://github.com/emanuelabreudev/hygia-graphrag"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hygia"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

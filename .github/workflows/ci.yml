@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Criar ambiente e instalar dependências pinadas
+        run: |
+          uv venv .venv --python 3.12
+          uv pip install -p .venv/bin/python -r requirements.txt
+
+      - name: Pipeline (smoke-test, sem figuras)
+        run: PYTHONPATH=src .venv/bin/python scripts/pipeline.py --rapido
+
+      - name: Suíte de testes
+        run: PYTHONPATH=src .venv/bin/python -m pytest tests/ -q
+
+      - name: Verificar contrato de resultados
+        run: |
+          PYTHONPATH=src .venv/bin/python - <<'PY'
+          import json, pathlib
+          r = json.loads(pathlib.Path("resultados/avaliacao_recuperacao.json").read_text())
+          g = r["resultados"]["por_recuperador"]["graphrag"]["geral"]["cobertura"]["media"]
+          assert g == 1.0, f"cobertura Graph RAG regrediu: {g}"
+          sig = r["resultados"]["significancia"]["cobertura"]
+          assert sig["significativo_5pct"], "ganho deixou de ser significativo"
+          print(f"OK — cobertura Graph RAG={g}, p={sig['p_valor']}")
+          PY

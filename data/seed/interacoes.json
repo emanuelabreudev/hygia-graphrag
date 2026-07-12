@@ -1,0 +1,491 @@
+{
+  "versao": "1.0.0",
+  "descricao": "Base curada de interações medicamentosas, vias enzimáticas e regras de inferência mecanística. Consolidada a partir de fontes públicas de referência (Bulário Eletrônico ANVISA, Formulário Terapêutico Nacional, literatura farmacológica). USO EDUCACIONAL — não substitui avaliação clínica.",
+
+  "enzimas": [
+    {"id": "CYP3A4", "nome": "Citocromo P450 3A4", "tipo": "oxidativa", "nota": "Responsável pelo metabolismo de cerca de metade dos fármacos de uso corrente."},
+    {"id": "CYP2C9", "nome": "Citocromo P450 2C9", "tipo": "oxidativa", "nota": "Metaboliza a S-varfarina, o enantiômero mais potente."},
+    {"id": "CYP2C19", "nome": "Citocromo P450 2C19", "tipo": "oxidativa", "nota": "Ativa o clopidogrel (pró-fármaco)."},
+    {"id": "CYP2D6", "nome": "Citocromo P450 2D6", "tipo": "oxidativa", "nota": "Ativa o tramadol em seu metabólito analgésico O-desmetiltramadol."},
+    {"id": "CYP1A2", "nome": "Citocromo P450 1A2", "tipo": "oxidativa", "nota": "Principal via de depuração da teofilina."},
+    {"id": "UGT", "nome": "UDP-glicuronosiltransferase", "tipo": "conjugativa", "nota": "Via de glicuronidação; principal rota de eliminação da lamotrigina."},
+    {"id": "XO", "nome": "Xantina oxidase", "tipo": "oxidativa", "nota": "Degrada a 6-mercaptopurina, metabólito ativo da azatioprina."}
+  ],
+
+  "metabolismo": [
+    {"medicamento": "claritromicina",  "enzima": "CYP3A4",  "papel": "inibidor",   "intensidade": "forte"},
+    {"medicamento": "eritromicina",    "enzima": "CYP3A4",  "papel": "inibidor",   "intensidade": "moderada"},
+    {"medicamento": "cetoconazol",     "enzima": "CYP3A4",  "papel": "inibidor",   "intensidade": "forte"},
+    {"medicamento": "fluconazol",      "enzima": "CYP3A4",  "papel": "inibidor",   "intensidade": "moderada"},
+    {"medicamento": "fluconazol",      "enzima": "CYP2C9",  "papel": "inibidor",   "intensidade": "forte"},
+    {"medicamento": "amiodarona",      "enzima": "CYP2C9",  "papel": "inibidor",   "intensidade": "moderada"},
+    {"medicamento": "amiodarona",      "enzima": "CYP3A4",  "papel": "inibidor",   "intensidade": "moderada"},
+    {"medicamento": "ciprofloxacino",  "enzima": "CYP1A2",  "papel": "inibidor",   "intensidade": "forte"},
+    {"medicamento": "fluoxetina",      "enzima": "CYP2D6",  "papel": "inibidor",   "intensidade": "forte"},
+    {"medicamento": "fluoxetina",      "enzima": "CYP2C19", "papel": "inibidor",   "intensidade": "moderada"},
+    {"medicamento": "omeprazol",       "enzima": "CYP2C19", "papel": "inibidor",   "intensidade": "forte"},
+    {"medicamento": "carbamazepina",   "enzima": "CYP3A4",  "papel": "indutor",    "intensidade": "forte"},
+    {"medicamento": "fenitoína",       "enzima": "CYP3A4",  "papel": "indutor",    "intensidade": "forte"},
+    {"medicamento": "fenitoína",       "enzima": "CYP2C9",  "papel": "substrato",  "intensidade": "sensivel"},
+    {"medicamento": "trimetoprima",    "enzima": "CYP2C9",  "papel": "inibidor",   "intensidade": "moderada"},
+    {"medicamento": "alopurinol",      "enzima": "XO",      "papel": "inibidor",   "intensidade": "forte"},
+    {"medicamento": "ácido valproico", "enzima": "UGT",     "papel": "inibidor",   "intensidade": "forte"},
+
+    {"medicamento": "sinvastatina",    "enzima": "CYP3A4",  "papel": "substrato",  "intensidade": "sensivel"},
+    {"medicamento": "atorvastatina",   "enzima": "CYP3A4",  "papel": "substrato",  "intensidade": "moderada"},
+    {"medicamento": "sildenafila",     "enzima": "CYP3A4",  "papel": "substrato",  "intensidade": "sensivel"},
+    {"medicamento": "zolpidem",        "enzima": "CYP3A4",  "papel": "substrato",  "intensidade": "moderada"},
+    {"medicamento": "diazepam",        "enzima": "CYP3A4",  "papel": "substrato",  "intensidade": "moderada"},
+    {"medicamento": "carbamazepina",   "enzima": "CYP3A4",  "papel": "substrato",  "intensidade": "sensivel"},
+    {"medicamento": "varfarina",       "enzima": "CYP2C9",  "papel": "substrato",  "intensidade": "sensivel"},
+    {"medicamento": "teofilina",       "enzima": "CYP1A2",  "papel": "substrato",  "intensidade": "sensivel"},
+    {"medicamento": "amitriptilina",   "enzima": "CYP2D6",  "papel": "substrato",  "intensidade": "moderada"},
+    {"medicamento": "lamotrigina",     "enzima": "UGT",     "papel": "substrato",  "intensidade": "sensivel"},
+
+    {"medicamento": "clopidogrel",     "enzima": "CYP2C19", "papel": "pro_farmaco", "intensidade": "sensivel"},
+    {"medicamento": "tramadol",        "enzima": "CYP2D6",  "papel": "pro_farmaco", "intensidade": "sensivel"},
+    {"medicamento": "azatioprina",     "enzima": "XO",      "papel": "substrato",   "intensidade": "sensivel"}
+  ],
+
+  "regras_mecanismo": [
+    {
+      "id": "R1_inibicao_substrato",
+      "condicao": "A inibe enzima E (forte ou moderada) E B é substrato de E",
+      "efeito": "Acúmulo de B por redução da depuração — risco de toxicidade dose-dependente.",
+      "severidade_base": "grave",
+      "severidade_se_intensidade_forte_e_substrato_sensivel": "contraindicado"
+    },
+    {
+      "id": "R2_inducao_substrato",
+      "condicao": "A induz enzima E (forte) E B é substrato de E",
+      "efeito": "Aceleração da depuração de B — risco de perda de eficácia terapêutica.",
+      "severidade_base": "grave"
+    },
+    {
+      "id": "R3_inibicao_pro_farmaco",
+      "condicao": "A inibe enzima E E B é pró-fármaco ativado por E",
+      "efeito": "Bloqueio da bioativação de B — perda de efeito terapêutico (falha clínica silenciosa).",
+      "severidade_base": "grave"
+    },
+    {
+      "id": "R4_inibicao_xantina_oxidase",
+      "condicao": "A inibe a xantina oxidase E B é substrato dessa via",
+      "efeito": "Acúmulo do metabólito ativo — risco de mielossupressão grave.",
+      "severidade_base": "contraindicado"
+    }
+  ],
+
+  "interacoes_farmaco_farmaco": [
+    {
+      "id": "ddi-001", "a": "varfarina", "b": "ácido acetilsalicílico",
+      "severidade": "grave",
+      "mecanismo": "Somação de efeitos hemostáticos: inibição da síntese de fatores de coagulação vitamina K-dependentes associada à inibição irreversível da agregação plaquetária, além de lesão direta da mucosa gástrica.",
+      "efeito": "Aumento expressivo do risco de sangramento, incluindo hemorragia digestiva alta.",
+      "manejo": "Associar apenas com indicação formal e sob monitoramento rigoroso do RNI e de sinais de sangramento. Considerar gastroproteção com inibidor de bomba de prótons.",
+      "evidencia": "alta",
+      "documentado_em": "varfarina"
+    },
+    {
+      "id": "ddi-002", "a": "digoxina", "b": "furosemida",
+      "severidade": "grave",
+      "mecanismo": "A depleção de potássio induzida pelo diurético de alça aumenta a ligação da digoxina à Na+/K+-ATPase.",
+      "efeito": "Potencialização da toxicidade digitálica mesmo com digoxinemia dentro da faixa terapêutica — arritmias, náusea e distúrbios visuais.",
+      "manejo": "Monitorar potássio sérico e repor quando necessário. Atenção a sinais precoces de intoxicação digitálica.",
+      "evidencia": "alta",
+      "documentado_em": "digoxina"
+    },
+    {
+      "id": "ddi-003", "a": "digoxina", "b": "amiodarona",
+      "severidade": "grave",
+      "mecanismo": "A amiodarona inibe a glicoproteína-P, reduzindo a secreção tubular e a eliminação da digoxina.",
+      "efeito": "Elevação da digoxinemia, tipicamente ao dobro, com risco de intoxicação.",
+      "manejo": "Reduzir a dose de digoxina em cerca de 50% ao iniciar amiodarona e dosar a digoxinemia.",
+      "evidencia": "alta",
+      "documentado_em": "amiodarona"
+    },
+    {
+      "id": "ddi-004", "a": "metotrexato", "b": "trimetoprima",
+      "severidade": "contraindicado",
+      "mecanismo": "Bloqueio sequencial da via do folato por dois antifolatos.",
+      "efeito": "Mielossupressão grave, pancitopenia.",
+      "manejo": "Evitar a associação. Preferir outro antimicrobiano.",
+      "evidencia": "alta",
+      "documentado_em": "metotrexato"
+    },
+    {
+      "id": "ddi-005", "a": "levotiroxina", "b": "omeprazol",
+      "severidade": "moderada",
+      "mecanismo": "A elevação do pH gástrico reduz a dissolução e a absorção da levotiroxina.",
+      "efeito": "Redução da eficácia da reposição hormonal, com elevação do TSH.",
+      "manejo": "Espaçar as administrações e reavaliar o TSH após 6 a 8 semanas do início do inibidor de bomba de prótons.",
+      "evidencia": "moderada",
+      "documentado_em": "levotiroxina"
+    },
+    {
+      "id": "ddi-006", "a": "espironolactona", "b": "enalapril",
+      "severidade": "grave",
+      "mecanismo": "Duplo bloqueio da excreção renal de potássio: o IECA reduz a aldosterona e a espironolactona antagoniza seu receptor.",
+      "efeito": "Hipercalemia, potencialmente fatal por arritmia.",
+      "manejo": "Associação útil na insuficiência cardíaca, porém exige dosagem de potássio e creatinina antes do início e periodicamente.",
+      "evidencia": "alta",
+      "documentado_em": "espironolactona"
+    },
+    {
+      "id": "ddi-007", "a": "alopurinol", "b": "azatioprina",
+      "severidade": "contraindicado",
+      "mecanismo": "O alopurinol inibe a xantina oxidase, enzima que degrada a 6-mercaptopurina, metabólito ativo da azatioprina.",
+      "efeito": "Acúmulo do metabólito citotóxico com mielossupressão grave.",
+      "manejo": "Evitar a associação. Se imprescindível, reduzir a azatioprina a 25% da dose usual com hemograma seriado.",
+      "evidencia": "alta",
+      "documentado_em": "alopurinol"
+    },
+    {
+      "id": "ddi-008", "a": "carbonato de lítio", "b": "hidroclorotiazida",
+      "severidade": "grave",
+      "mecanismo": "O diurético tiazídico induz depleção de sódio, aumentando a reabsorção proximal de lítio.",
+      "efeito": "Elevação da litemia e risco de intoxicação — tremor grosseiro, ataxia, confusão.",
+      "manejo": "Monitorar a litemia após o início do diurético e ajustar a dose de lítio.",
+      "evidencia": "alta",
+      "documentado_em": "carbonato de lítio"
+    },
+    {
+      "id": "ddi-009", "a": "ácido valproico", "b": "lamotrigina",
+      "severidade": "grave",
+      "mecanismo": "O valproato inibe a glicuronidação da lamotrigina, dobrando sua meia-vida.",
+      "efeito": "Acúmulo de lamotrigina com risco aumentado de rash grave, incluindo síndrome de Stevens-Johnson.",
+      "manejo": "Reduzir a dose inicial de lamotrigina à metade e adotar titulação mais lenta.",
+      "evidencia": "alta",
+      "documentado_em": "lamotrigina"
+    },
+    {
+      "id": "ddi-010", "a": "sinvastatina", "b": "anlodipino",
+      "severidade": "moderada",
+      "mecanismo": "O anlodipino inibe parcialmente o metabolismo da sinvastatina.",
+      "efeito": "Elevação da exposição à sinvastatina com risco aumentado de miopatia.",
+      "manejo": "Limitar a dose de sinvastatina a 20 mg ao dia quando associada ao anlodipino.",
+      "evidencia": "moderada",
+      "documentado_em": "sinvastatina"
+    },
+    {
+      "id": "ddi-011", "a": "propranolol", "b": "glibenclamida",
+      "severidade": "moderada",
+      "mecanismo": "O betabloqueio não seletivo suprime os sinais adrenérgicos de alarme da hipoglicemia (taquicardia, tremor) e prejudica a glicogenólise de resgate.",
+      "efeito": "Hipoglicemia despercebida e de recuperação mais lenta.",
+      "manejo": "Orientar o paciente a reconhecer sinais não adrenérgicos (sudorese, confusão). Preferir betabloqueador cardiosseletivo.",
+      "evidencia": "moderada",
+      "documentado_em": "propranolol"
+    },
+    {
+      "id": "ddi-012", "a": "ciprofloxacino", "b": "prednisona",
+      "severidade": "moderada",
+      "mecanismo": "Efeito aditivo sobre a matriz tendínea.",
+      "efeito": "Aumento do risco de tendinite e ruptura de tendão, sobretudo em idosos.",
+      "manejo": "Evitar esforço físico intenso durante o tratamento e suspender a quinolona ao primeiro sinal de dor tendínea.",
+      "evidencia": "moderada",
+      "documentado_em": "ciprofloxacino"
+    },
+    {
+      "id": "ddi-013", "a": "metformina", "b": "furosemida",
+      "severidade": "moderada",
+      "mecanismo": "A depleção de volume induzida pelo diurético pode precipitar queda da função renal, reduzindo a depuração da metformina.",
+      "efeito": "Risco aumentado de acidose lática em pacientes com função renal limítrofe.",
+      "manejo": "Monitorar creatinina e taxa de filtração glomerular; suspender a metformina em quadros de desidratação aguda.",
+      "evidencia": "moderada",
+      "documentado_em": "metformina"
+    },
+    {
+      "id": "ddi-014", "a": "clonazepam", "b": "tramadol",
+      "severidade": "grave",
+      "mecanismo": "Depressão aditiva do sistema nervoso central e do drive respiratório.",
+      "efeito": "Sedação profunda, depressão respiratória, risco de óbito.",
+      "manejo": "Evitar a associação. Se inevitável, usar as menores doses possíveis com monitoramento.",
+      "evidencia": "alta",
+      "documentado_em": "tramadol"
+    },
+    {
+      "id": "ddi-015", "a": "amiodarona", "b": "varfarina",
+      "severidade": "grave",
+      "mecanismo": "A amiodarona inibe o metabolismo da varfarina pela CYP2C9.",
+      "efeito": "Elevação do RNI e risco hemorrágico, com efeito que se instala ao longo de semanas.",
+      "manejo": "Reduzir a dose de varfarina em 30 a 50% ao iniciar a amiodarona e intensificar o controle do RNI.",
+      "evidencia": "alta",
+      "documentado_em": "amiodarona"
+    }
+  ],
+
+  "interacoes_farmaco_classe": [
+    {
+      "id": "dci-001", "medicamento": "varfarina", "classe": "anti-inflamatório não esteroidal",
+      "severidade": "grave",
+      "mecanismo": "Os anti-inflamatórios não esteroidais inibem a agregação plaquetária, lesam a mucosa gastroduodenal e deslocam a varfarina da albumina plasmática.",
+      "efeito": "Aumento marcante do risco de hemorragia digestiva.",
+      "manejo": "Evitar. Preferir paracetamol ou dipirona como analgésico, com controle do RNI caso o paracetamol seja usado em doses altas e por período prolongado.",
+      "evidencia": "alta",
+      "documentado_em": "varfarina"
+    },
+    {
+      "id": "dci-002", "medicamento": "carbonato de lítio", "classe": "anti-inflamatório não esteroidal",
+      "severidade": "grave",
+      "mecanismo": "Os anti-inflamatórios não esteroidais reduzem a síntese de prostaglandinas renais, diminuindo a depuração do lítio.",
+      "efeito": "Elevação da litemia com risco de intoxicação.",
+      "manejo": "Evitar. Se necessário analgésico, preferir paracetamol. Monitorar a litemia se a associação for inevitável.",
+      "evidencia": "alta",
+      "documentado_em": "carbonato de lítio"
+    },
+    {
+      "id": "dci-003", "medicamento": "carbonato de lítio", "classe": "inibidor da enzima conversora de angiotensina",
+      "severidade": "grave",
+      "mecanismo": "Redução da depuração renal de lítio por queda da filtração glomerular e aumento da reabsorção tubular.",
+      "efeito": "Elevação da litemia.",
+      "manejo": "Monitorar a litemia após o início do IECA.",
+      "evidencia": "moderada",
+      "documentado_em": "carbonato de lítio"
+    },
+    {
+      "id": "dci-004", "medicamento": "metotrexato", "classe": "anti-inflamatório não esteroidal",
+      "severidade": "grave",
+      "mecanismo": "Os anti-inflamatórios não esteroidais competem pela secreção tubular renal e reduzem o fluxo sanguíneo renal, diminuindo a depuração do metotrexato.",
+      "efeito": "Acúmulo de metotrexato com mielossupressão, mucosite e nefrotoxicidade.",
+      "manejo": "Evitar, especialmente em doses altas de metotrexato. Em dose baixa semanal para artrite reumatoide, usar com cautela e hemograma seriado.",
+      "evidencia": "alta",
+      "documentado_em": "metotrexato"
+    },
+    {
+      "id": "dci-005", "medicamento": "sildenafila", "classe": "nitrato orgânico (vasodilatador)",
+      "severidade": "contraindicado",
+      "mecanismo": "Ambos elevam o GMP cíclico na musculatura lisa vascular por vias complementares, produzindo vasodilatação sinérgica.",
+      "efeito": "Hipotensão grave e refratária, com risco de isquemia miocárdica e óbito.",
+      "manejo": "Contraindicação absoluta. Respeitar intervalo mínimo de 24 horas entre a sildenafila e qualquer nitrato.",
+      "evidencia": "alta",
+      "documentado_em": "sildenafila"
+    },
+    {
+      "id": "dci-006", "medicamento": "espironolactona", "classe": "bloqueador do receptor de angiotensina II",
+      "severidade": "grave",
+      "mecanismo": "Duplo bloqueio da excreção renal de potássio.",
+      "efeito": "Hipercalemia.",
+      "manejo": "Monitorar potássio e creatinina periodicamente.",
+      "evidencia": "alta",
+      "documentado_em": "espironolactona"
+    },
+    {
+      "id": "dci-007", "medicamento": "digoxina", "classe": "diurético tiazídico",
+      "severidade": "grave",
+      "mecanismo": "A hipocalemia induzida pelo tiazídico potencializa a ligação da digoxina à sua enzima-alvo.",
+      "efeito": "Toxicidade digitálica.",
+      "manejo": "Monitorar e repor potássio.",
+      "evidencia": "alta",
+      "documentado_em": "digoxina"
+    },
+    {
+      "id": "dci-008", "medicamento": "carbonato de lítio", "classe": "diurético de alça",
+      "severidade": "moderada",
+      "mecanismo": "Alteração do balanço de sódio com impacto sobre a reabsorção tubular de lítio.",
+      "efeito": "Variação imprevisível da litemia.",
+      "manejo": "Monitorar a litemia.",
+      "evidencia": "moderada",
+      "documentado_em": "carbonato de lítio"
+    },
+    {
+      "id": "dci-009", "medicamento": "tramadol", "classe": "inibidor seletivo da recaptação de serotonina",
+      "severidade": "grave",
+      "mecanismo": "O tramadol inibe a recaptação de serotonina, somando-se ao efeito do antidepressivo; além disso reduz o limiar convulsivo.",
+      "efeito": "Síndrome serotoninérgica (agitação, hipertermia, rigidez, clônus) e risco de convulsão.",
+      "manejo": "Evitar. Preferir analgésico não serotoninérgico. Se usado, iniciar com dose baixa e orientar sobre sinais de alerta.",
+      "evidencia": "alta",
+      "documentado_em": "tramadol"
+    },
+    {
+      "id": "dci-010", "medicamento": "sumatriptana", "classe": "inibidor seletivo da recaptação de serotonina",
+      "severidade": "moderada",
+      "mecanismo": "Somação de estímulo serotoninérgico central.",
+      "efeito": "Risco de síndrome serotoninérgica, embora infrequente na prática.",
+      "manejo": "Uso possível com orientação sobre sinais de alerta.",
+      "evidencia": "baixa",
+      "documentado_em": "sumatriptana"
+    },
+    {
+      "id": "dci-011", "medicamento": "varfarina", "classe": "antibiótico macrolídeo",
+      "severidade": "grave",
+      "mecanismo": "Inibição do metabolismo da varfarina e redução da flora intestinal produtora de vitamina K.",
+      "efeito": "Elevação do RNI e risco de sangramento.",
+      "manejo": "Controlar o RNI durante e após o curso do antibiótico.",
+      "evidencia": "alta",
+      "documentado_em": "varfarina"
+    },
+    {
+      "id": "dci-012", "medicamento": "metformina", "classe": "corticosteroide sistêmico",
+      "severidade": "moderada",
+      "mecanismo": "Os corticosteroides elevam a glicemia por aumento da resistência periférica à insulina e da gliconeogênese hepática.",
+      "efeito": "Perda de controle glicêmico durante o corticoide.",
+      "manejo": "Intensificar a automonitorização glicêmica e ajustar o esquema antidiabético durante o curso do corticoide.",
+      "evidencia": "alta",
+      "documentado_em": "prednisona"
+    },
+    {
+      "id": "dci-013", "medicamento": "insulina NPH", "classe": "corticosteroide sistêmico",
+      "severidade": "moderada",
+      "mecanismo": "Antagonismo do efeito hipoglicemiante por indução de resistência insulínica.",
+      "efeito": "Hiperglicemia; necessidade de aumento transitório da dose de insulina.",
+      "manejo": "Ajustar a dose de insulina durante o corticoide e reduzir progressivamente na retirada.",
+      "evidencia": "alta",
+      "documentado_em": "prednisona"
+    },
+    {
+      "id": "dci-014", "medicamento": "propranolol", "classe": "antidiabético sulfonilureia",
+      "severidade": "moderada",
+      "mecanismo": "Bloqueio dos sinais adrenérgicos de hipoglicemia.",
+      "efeito": "Hipoglicemia sem sintomas de alerta.",
+      "manejo": "Preferir betabloqueador cardiosseletivo em diabéticos.",
+      "evidencia": "moderada",
+      "documentado_em": "propranolol"
+    },
+    {
+      "id": "dci-015", "medicamento": "sinvastatina", "classe": "antibiótico macrolídeo",
+      "severidade": "contraindicado",
+      "mecanismo": "Inibição potente do metabolismo oxidativo da sinvastatina, elevando várias vezes sua concentração plasmática.",
+      "efeito": "Miopatia e rabdomiólise com insuficiência renal aguda.",
+      "manejo": "Suspender a sinvastatina durante o curso do macrolídeo.",
+      "evidencia": "alta",
+      "documentado_em": "sinvastatina"
+    }
+  ],
+
+  "interacoes_classe_classe": [
+    {
+      "id": "cci-001", "classe_a": "inibidor seletivo da recaptação de serotonina", "classe_b": "inibidor da monoaminoxidase",
+      "severidade": "contraindicado",
+      "mecanismo": "Bloqueio simultâneo da recaptação e da degradação da serotonina, com acúmulo maciço na fenda sináptica.",
+      "efeito": "Síndrome serotoninérgica grave: hipertermia, rigidez muscular, instabilidade autonômica, convulsões, óbito.",
+      "manejo": "Contraindicação absoluta. Respeitar intervalo de washout de pelo menos 14 dias entre as classes (5 semanas no caso da fluoxetina, pela meia-vida longa do metabólito).",
+      "evidencia": "alta",
+      "documentado_em": "classe:inibidor seletivo da recaptação de serotonina"
+    },
+    {
+      "id": "cci-002", "classe_a": "antidepressivo tricíclico", "classe_b": "inibidor da monoaminoxidase",
+      "severidade": "contraindicado",
+      "mecanismo": "Acúmulo de monoaminas por bloqueio simultâneo da recaptação e da degradação.",
+      "efeito": "Síndrome serotoninérgica e crise hipertensiva.",
+      "manejo": "Contraindicação absoluta; respeitar washout.",
+      "evidencia": "alta",
+      "documentado_em": "classe:antidepressivo tricíclico"
+    },
+    {
+      "id": "cci-003", "classe_a": "inibidor seletivo da recaptação de serotonina", "classe_b": "anti-inflamatório não esteroidal",
+      "severidade": "grave",
+      "mecanismo": "A serotonina plaquetária é necessária para a agregação; os ISRS depletam esse estoque, somando-se à lesão de mucosa e à antiagregação causadas pelo anti-inflamatório.",
+      "efeito": "Risco de hemorragia digestiva alta multiplicado por um fator de aproximadamente seis em relação ao uso isolado.",
+      "manejo": "Evitar a associação prolongada. Se necessária, associar gastroproteção com inibidor de bomba de prótons.",
+      "evidencia": "alta",
+      "documentado_em": "classe:inibidor seletivo da recaptação de serotonina"
+    },
+    {
+      "id": "cci-004", "classe_a": "inibidor seletivo da recaptação de serotonina", "classe_b": "antiagregante plaquetário",
+      "severidade": "grave",
+      "mecanismo": "Depleção de serotonina plaquetária somada à inibição farmacológica da agregação.",
+      "efeito": "Aumento do risco de sangramento.",
+      "manejo": "Avaliar risco-benefício e considerar gastroproteção.",
+      "evidencia": "moderada",
+      "documentado_em": "classe:inibidor seletivo da recaptação de serotonina"
+    },
+    {
+      "id": "cci-005", "classe_a": "anti-inflamatório não esteroidal", "classe_b": "inibidor da enzima conversora de angiotensina",
+      "severidade": "grave",
+      "mecanismo": "O anti-inflamatório bloqueia a vasodilatação da arteríola aferente mediada por prostaglandinas, enquanto o IECA dilata a arteríola eferente; a associação a um diurético completa a chamada tríplice ameaça.",
+      "efeito": "Queda abrupta da filtração glomerular e lesão renal aguda, além de perda do controle pressórico.",
+      "manejo": "Evitar a tríplice associação, sobretudo em idosos e nefropatas. Monitorar creatinina se inevitável.",
+      "evidencia": "alta",
+      "documentado_em": "classe:anti-inflamatório não esteroidal"
+    },
+    {
+      "id": "cci-006", "classe_a": "anti-inflamatório não esteroidal", "classe_b": "bloqueador do receptor de angiotensina II",
+      "severidade": "grave",
+      "mecanismo": "Mesmo mecanismo hemodinâmico renal descrito para os IECA.",
+      "efeito": "Lesão renal aguda e redução do efeito anti-hipertensivo.",
+      "manejo": "Evitar uso crônico concomitante; monitorar função renal.",
+      "evidencia": "alta",
+      "documentado_em": "classe:anti-inflamatório não esteroidal"
+    },
+    {
+      "id": "cci-007", "classe_a": "anti-inflamatório não esteroidal", "classe_b": "diurético de alça",
+      "severidade": "moderada",
+      "mecanismo": "Inibição das prostaglandinas renais que medeiam parte do efeito natriurético.",
+      "efeito": "Redução do efeito diurético e piora do controle do edema.",
+      "manejo": "Evitar em pacientes com insuficiência cardíaca descompensada.",
+      "evidencia": "moderada",
+      "documentado_em": "classe:anti-inflamatório não esteroidal"
+    },
+    {
+      "id": "cci-008", "classe_a": "anti-inflamatório não esteroidal", "classe_b": "antiagregante plaquetário",
+      "severidade": "moderada",
+      "mecanismo": "Competição pelo sítio da ciclo-oxigenase-1 plaquetária, além de somação do risco de lesão gástrica.",
+      "efeito": "Redução do efeito cardioprotetor do antiagregante e aumento do risco de sangramento digestivo.",
+      "manejo": "Se a associação for necessária, administrar o antiagregante pelo menos 2 horas antes do anti-inflamatório.",
+      "evidencia": "moderada",
+      "documentado_em": "classe:anti-inflamatório não esteroidal"
+    },
+    {
+      "id": "cci-009", "classe_a": "inibidor da enzima conversora de angiotensina", "classe_b": "diurético poupador de potássio",
+      "severidade": "grave",
+      "mecanismo": "Duplo bloqueio da excreção de potássio.",
+      "efeito": "Hipercalemia com risco de arritmia grave.",
+      "manejo": "Monitorar potássio e creatinina.",
+      "evidencia": "alta",
+      "documentado_em": "classe:diurético poupador de potássio"
+    },
+    {
+      "id": "cci-010", "classe_a": "benzodiazepínico", "classe_b": "analgésico opioide",
+      "severidade": "grave",
+      "mecanismo": "Depressão aditiva do sistema nervoso central e do centro respiratório bulbar.",
+      "efeito": "Sedação excessiva, depressão respiratória, óbito.",
+      "manejo": "Evitar a coprescrição. Quando inevitável, usar a menor dose e a menor duração possíveis.",
+      "evidencia": "alta",
+      "documentado_em": "classe:benzodiazepínico"
+    },
+    {
+      "id": "cci-011", "classe_a": "antibiótico macrolídeo", "classe_b": "antiarrítmico classe III",
+      "severidade": "grave",
+      "mecanismo": "Somação de bloqueio de canais de potássio cardíacos com prolongamento aditivo do intervalo QT.",
+      "efeito": "Torsades de pointes.",
+      "manejo": "Evitar. Se inevitável, realizar eletrocardiograma seriado e corrigir distúrbios eletrolíticos.",
+      "evidencia": "alta",
+      "documentado_em": "classe:antibiótico macrolídeo"
+    },
+    {
+      "id": "cci-012", "classe_a": "estatina", "classe_b": "antifúngico azólico",
+      "severidade": "grave",
+      "mecanismo": "Inibição do metabolismo oxidativo da estatina pelo antifúngico.",
+      "efeito": "Miopatia e rabdomiólise.",
+      "manejo": "Suspender temporariamente a estatina durante o tratamento antifúngico sistêmico.",
+      "evidencia": "alta",
+      "documentado_em": "classe:estatina"
+    },
+    {
+      "id": "cci-013", "classe_a": "betabloqueador não seletivo", "classe_b": "broncodilatador beta-2 agonista",
+      "severidade": "grave",
+      "mecanismo": "Antagonismo direto no receptor beta-2 brônquico.",
+      "efeito": "Broncoespasmo e perda de eficácia do broncodilatador de resgate.",
+      "manejo": "Contraindicar betabloqueador não seletivo em asmáticos; usar cardiosseletivo se houver indicação cardiológica imperiosa.",
+      "evidencia": "alta",
+      "documentado_em": "classe:betabloqueador não seletivo"
+    },
+    {
+      "id": "cci-014", "classe_a": "inibidor da bomba de prótons", "classe_b": "antifúngico azólico",
+      "severidade": "moderada",
+      "mecanismo": "A elevação do pH gástrico reduz a dissolução de azólicos dependentes de meio ácido, como o cetoconazol.",
+      "efeito": "Redução da absorção e falha terapêutica antifúngica.",
+      "manejo": "Preferir azólico não dependente de pH, como o fluconazol.",
+      "evidencia": "moderada",
+      "documentado_em": "classe:antifúngico azólico"
+    },
+    {
+      "id": "cci-015", "classe_a": "anticoagulante cumarínico", "classe_b": "antiagregante plaquetário",
+      "severidade": "grave",
+      "mecanismo": "Bloqueio simultâneo da cascata de coagulação e da hemostasia primária.",
+      "efeito": "Risco hemorrágico substancialmente aumentado.",
+      "manejo": "Associar somente com indicação formal (por exemplo, stent recente em paciente com fibrilação atrial), pelo menor tempo possível.",
+      "evidencia": "alta",
+      "documentado_em": "classe:anticoagulante cumarínico"
+    }
+  ]
+}

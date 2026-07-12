@@ -1,0 +1,40 @@
+{
+  "ablacao": {
+    "so_hibrido": {
+      "cobertura_geral": 0.2,
+      "por_tipo": {
+        "fato_direto": 1.0,
+        "mecanismo": 0.0,
+        "ponte_classe": 0.0769,
+        "ponte_classe2": 0.0
+      }
+    },
+    "sem_caminhada": {
+      "cobertura_geral": 1.0,
+      "por_tipo": {
+        "fato_direto": 1.0,
+        "mecanismo": 1.0,
+        "ponte_classe": 1.0,
+        "ponte_classe2": 1.0
+      }
+    },
+    "sem_inferencia": {
+      "cobertura_geral": 0.8571,
+      "por_tipo": {
+        "fato_direto": 1.0,
+        "mecanismo": 0.375,
+        "ponte_classe": 1.0,
+        "ponte_classe2": 1.0
+      }
+    },
+    "completo": {
+      "cobertura_geral": 1.0,
+      "por_tipo": {
+        "fato_direto": 1.0,
+        "mecanismo": 1.0,
+        "ponte_classe": 1.0,
+        "ponte_classe2": 1.0
+      }
+    }
+  }
+}
